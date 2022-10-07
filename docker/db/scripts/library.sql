@@ -1,16 +1,16 @@
 CREATE TABLE "Reader" (
   "id" int PRIMARY KEY,
-  "surname" string,
-  "name" string,
-  "address" string,
+  "surname" varchar,
+  "name" varchar,
+  "address" varchar,
   "birth" datetime
 );
 
 CREATE TABLE "Book" (
-  "isbn" string PRIMARY KEY,
+  "isbn" varchar PRIMARY KEY,
   "year" int,
-  "name" string,
-  "author" string,
+  "name" varchar,
+  "author" varchar,
   "num_of_pages" int
 );
 
@@ -20,16 +20,16 @@ CREATE TABLE "Book_Copy" (
 );
 
 CREATE TABLE "Category" (
-  "name" string PRIMARY KEY
+  "name" varchar PRIMARY KEY
 );
 
 CREATE TABLE "Publishing_House" (
-  "name" string PRIMARY KEY,
-  "address" string
+  "name" varchar PRIMARY KEY,
+  "address" varchar
 );
 
 CREATE TABLE "Library" (
-  "name" string PRIMARY KEY
+  "name" varchar PRIMARY KEY
 );
 
 CREATE TABLE "Rent" (
@@ -41,8 +41,8 @@ ALTER TABLE "Book" ADD FOREIGN KEY ("isbn") REFERENCES "Publishing_House" ("name
 ALTER TABLE "Book_Copy" ADD FOREIGN KEY ("id") REFERENCES "Book" ("isbn");
 
 CREATE TABLE "Book_Category" (
-  "Book_isbn" string NOT NULL,
-  "Category_name" string NOT NULL,
+  "Book_isbn" varchar NOT NULL,
+  "Category_name" varchar NOT NULL,
   PRIMARY KEY ("Book_isbn", "Category_name")
 );
 

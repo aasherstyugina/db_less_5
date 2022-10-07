@@ -1,37 +1,37 @@
 CREATE TABLE "Station_Personell" (
   "persNr" int PRIMARY KEY,
-  "name" string,
+  "name" varchar,
   "statNr" int
 );
 
 CREATE TABLE "Caregiver" (
   "persNr" int PRIMARY KEY,
-  "name" string,
+  "name" varchar,
   "statNr" int,
-  "qualification" string
+  "qualification" varchar
 );
 
 CREATE TABLE "Doctor" (
   "persNr" int PRIMARY KEY,
-  "name" string,
+  "name" varchar,
   "statNr" int,
-  "area" string,
-  "rank" string
+  "area" varchar,
+  "rank" varchar
 );
 
 CREATE TABLE "Patient" (
   "patientNr" int PRIMARY KEY,
-  "name" string,
-  "disease" string,
+  "name" varchar,
+  "disease" varchar,
   "statNr" int,
   "roomNr" int,
-  "from" string,
-  "to" string
+  "from" varchar,
+  "to" varchar
 );
 
 CREATE TABLE "Station" (
   "statNr" int PRIMARY KEY,
-  "name" string
+  "name" varchar
 );
 
 CREATE TABLE "Room" (

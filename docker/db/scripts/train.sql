@@ -1,8 +1,8 @@
 CREATE TABLE "Station" (
-  "name" string PRIMARY KEY,
+  "name" varchar PRIMARY KEY,
   "tracks" int,
-  "city" string,
-  "region" string,
+  "city" varchar,
+  "region" varchar,
   "arrival" datetime,
   "departure" datetime
 );
@@ -10,13 +10,13 @@ CREATE TABLE "Station" (
 CREATE TABLE "Train" (
   "trainNr" int PRIMARY KEY,
   "length" int,
-  "from" string,
-  "to" string
+  "from" varchar,
+  "to" varchar
 );
 
 CREATE TABLE "City" (
-  "name" string,
-  "region" string,
+  "name" varchar,
+  "region" varchar,
   PRIMARY KEY ("name", "region")
 );
 
