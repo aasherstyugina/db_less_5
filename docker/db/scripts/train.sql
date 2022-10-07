@@ -15,13 +15,10 @@ CREATE TABLE "Train" (
 );
 
 CREATE TABLE "City" (
-  "name" varchar,
-  "region" varchar,
-  PRIMARY KEY ("name", "region")
+  "name" varchar PRIMARY KEY,
+  "region" varchar
 );
 
 ALTER TABLE "Station" ADD FOREIGN KEY ("name") REFERENCES "City" ("name");
-
-ALTER TABLE "Station" ADD FOREIGN KEY ("name") REFERENCES "City" ("region");
 
 ALTER TABLE "Train" ADD FOREIGN KEY ("trainNr") REFERENCES "Station" ("name");

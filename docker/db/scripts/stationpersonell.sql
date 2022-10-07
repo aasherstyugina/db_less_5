@@ -35,10 +35,9 @@ CREATE TABLE "Station" (
 );
 
 CREATE TABLE "Room" (
+  "roomNr" int PRIMARY KEY,
   "statNr" int,
-  "roomNr" int,
-  "beds" int,
-  PRIMARY KEY ("statNr", "roomNr")
+  "beds" int
 );
 
 ALTER TABLE "Patient" ADD FOREIGN KEY ("patientNr") REFERENCES "Doctor" ("persNr");
@@ -48,8 +47,6 @@ ALTER TABLE "Caregiver" ADD FOREIGN KEY ("persNr") REFERENCES "Station_Personell
 ALTER TABLE "Doctor" ADD FOREIGN KEY ("persNr") REFERENCES "Station_Personell" ("persNr");
 
 ALTER TABLE "Patient" ADD FOREIGN KEY ("patientNr") REFERENCES "Room" ("roomNr");
-
-ALTER TABLE "Patient" ADD FOREIGN KEY ("patientNr") REFERENCES "Room" ("statNr");
 
 ALTER TABLE "Room" ADD FOREIGN KEY ("roomNr") REFERENCES "Station" ("statNr");
 
