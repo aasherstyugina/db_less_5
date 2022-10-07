@@ -16,7 +16,7 @@ CREATE TABLE "Train" (
 
 CREATE TABLE "City" (
   "name" varchar PRIMARY KEY,
-  "region" varchar
+  "region" varchar UNIQUE
 );
 
 CREATE TABLE "Connection" (
