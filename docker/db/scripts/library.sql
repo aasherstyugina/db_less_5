@@ -1,5 +1,5 @@
 CREATE TABLE "Reader" (
-  "id" int PRIMARY KEY,
+  "id" varchar PRIMARY KEY,
   "surname" varchar,
   "name" varchar,
   "address" varchar,
@@ -15,7 +15,7 @@ CREATE TABLE "Book" (
 );
 
 CREATE TABLE "Book_Copy" (
-  "id" int PRIMARY KEY,
+  "id" varchar PRIMARY KEY,
   "position" int
 );
 

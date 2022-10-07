@@ -8,7 +8,7 @@ CREATE TABLE "Station" (
 );
 
 CREATE TABLE "Train" (
-  "trainNr" int PRIMARY KEY,
+  "trainNr" varchar PRIMARY KEY,
   "length" int,
   "from" varchar,
   "to" varchar
