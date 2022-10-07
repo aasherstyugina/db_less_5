@@ -3,7 +3,7 @@ CREATE TABLE "Reader" (
   "surname" varchar,
   "name" varchar,
   "address" varchar,
-  "birth" datetime
+  "birth" varchar
 );
 
 CREATE TABLE "Book" (
@@ -33,7 +33,7 @@ CREATE TABLE "Library" (
 );
 
 CREATE TABLE "Rent" (
-  "return" datetime PRIMARY KEY
+  "return" varchar PRIMARY KEY
 );
 
 ALTER TABLE "Book" ADD FOREIGN KEY ("isbn") REFERENCES "Publishing_House" ("name");

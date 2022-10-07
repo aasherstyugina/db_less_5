@@ -3,8 +3,8 @@ CREATE TABLE "Station" (
   "tracks" int,
   "city" varchar,
   "region" varchar,
-  "arrival" datetime,
-  "departure" datetime
+  "arrival" varchar,
+  "departure" varchar
 );
 
 CREATE TABLE "Train" (
