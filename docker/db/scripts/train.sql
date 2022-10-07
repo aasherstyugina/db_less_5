@@ -3,15 +3,15 @@ CREATE TABLE "Station" (
   "tracks" int,
   "city" varchar,
   "region" varchar,
-  "arrival" varchar,
-  "departure" varchar
+  "arrival" varchar UNIQUE,
+  "departure" varchar UNIQUE
 );
 
 CREATE TABLE "Train" (
   "trainNr" int PRIMARY KEY,
   "length" int,
-  "from" varchar,
-  "to" varchar
+  "from" varchar UNIQUE,
+  "to" varchar UNIQUE
 );
 
 CREATE TABLE "City" (
@@ -23,8 +23,8 @@ CREATE TABLE "Connection" (
   "trainNr" int PRIMARY KEY,
   "from" varchar UNIQUE,
   "to" varchar UNIQUE,
-  "arrival" varchar,
-  "departure" varchar
+  "arrival" varchar UNIQUE,
+  "departure" varchar UNIQUE
 );
 
 ALTER TABLE "Station" ADD FOREIGN KEY ("city") REFERENCES "City" ("name");

@@ -1,7 +1,7 @@
 CREATE TABLE "Station_Personell" (
   "persNr" int PRIMARY KEY,
   "name" varchar,
-  "statNr" int
+  "statNr" int UNIQUE
 );
 
 CREATE TABLE "Caregiver" (
@@ -14,7 +14,7 @@ CREATE TABLE "Caregiver" (
 CREATE TABLE "Doctor" (
   "persNr" int PRIMARY KEY,
   "name" varchar,
-  "statNr" int,
+  "statNr" int UNIQUE,
   "area" varchar,
   "rank" varchar
 );
@@ -24,7 +24,7 @@ CREATE TABLE "Patient" (
   "name" varchar,
   "disease" varchar,
   "statNr" int UNIQUE,
-  "roomNr" int,
+  "roomNr" int UNIQUE,
   "from" varchar,
   "to" varchar
 );
@@ -36,7 +36,7 @@ CREATE TABLE "Station" (
 
 CREATE TABLE "Room" (
   "roomNr" int PRIMARY KEY,
-  "statNr" int,
+  "statNr" int UNIQUE,
   "beds" int
 );
 
