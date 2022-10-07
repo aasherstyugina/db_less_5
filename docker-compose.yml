@@ -1,14 +1,35 @@
 version: "3.9"
+
 services:
-  postgres:
-    image: postgres:latest
+  library:
+    image: postgres:14.5
     environment:
-      POSTGRES_DB: "teacher"
-      POSTGRES_USER: "teacher"
-      POSTGRES_PASSWORD: "teacher"
-      PGDATA: "/var/lib/postgresql/data/pgdata"
+      POSTGRES_DB: "sherstyugina_204"
+      POSTGRES_USER: "sherstyugina_204"
+      POSTGRES_PASSWORD: "sherstyugina_204"
     volumes:
-      - docker/db/scripts:/docker-entrypoint-initdb.d
-      - dz:/var/lib/postgresql/data
+      - ./docker/db/scripts/library.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
-      - "5432:5432"
+      - "5430:5432"
+
+  train:
+    image: postgres:14.5
+    environment:
+      POSTGRES_DB: "sherstyugina_204"
+      POSTGRES_USER: "sherstyugina_204"
+      POSTGRES_PASSWORD: "sherstyugina_204"
+    volumes:
+      - ./docker/db/scripts/train.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5431:5432"
+
+  stationpersonell:
+    image: postgres:14.5
+    environment:
+      POSTGRES_DB: "sherstyugina_204"
+      POSTGRES_USER: "sherstyugina_204"
+      POSTGRES_PASSWORD: "sherstyugina_204"
+    volumes:
+      - ./docker/db/scripts/stationpersonell.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5433:5432"
