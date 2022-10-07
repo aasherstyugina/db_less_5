@@ -40,14 +40,16 @@ CREATE TABLE "Room" (
   "beds" int
 );
 
-ALTER TABLE "Patient" ADD FOREIGN KEY ("patientNr") REFERENCES "Doctor" ("persNr");
+ALTER TABLE "Room" ADD FOREIGN KEY ("statNr") REFERENCES "Patient" ("statNr");
+
+ALTER TABLE "Room" ADD FOREIGN KEY ("roomNr") REFERENCES "Patient" ("roomNr");
+
+ALTER TABLE "Patient" ADD FOREIGN KEY ("statNr") REFERENCES "Doctor" ("statNr");
 
 ALTER TABLE "Caregiver" ADD FOREIGN KEY ("persNr") REFERENCES "Station_Personell" ("persNr");
 
 ALTER TABLE "Doctor" ADD FOREIGN KEY ("persNr") REFERENCES "Station_Personell" ("persNr");
 
-ALTER TABLE "Patient" ADD FOREIGN KEY ("patientNr") REFERENCES "Room" ("roomNr");
+ALTER TABLE "Room" ADD FOREIGN KEY ("statNr") REFERENCES "Station" ("statNr");
 
-ALTER TABLE "Room" ADD FOREIGN KEY ("roomNr") REFERENCES "Station" ("statNr");
-
-ALTER TABLE "Station_Personell" ADD FOREIGN KEY ("persNr") REFERENCES "Station" ("statNr");
+ALTER TABLE "Station_Personell" ADD FOREIGN KEY ("statNr") REFERENCES "Station" ("statNr");
