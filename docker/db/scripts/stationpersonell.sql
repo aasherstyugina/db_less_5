@@ -23,7 +23,7 @@ CREATE TABLE "Patient" (
   "patientNr" int PRIMARY KEY,
   "name" varchar,
   "disease" varchar,
-  "statNr" int,
+  "statNr" int UNIQUE,
   "roomNr" int,
   "from" varchar,
   "to" varchar

@@ -21,8 +21,8 @@ CREATE TABLE "City" (
 
 CREATE TABLE "Connection" (
   "trainNr" int PRIMARY KEY,
-  "from" varchar,
-  "to" varchar,
+  "from" varchar UNIQUE,
+  "to" varchar UNIQUE,
   "arrival" varchar,
   "departure" varchar
 );
